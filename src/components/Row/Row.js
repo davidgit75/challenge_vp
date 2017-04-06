@@ -56,6 +56,7 @@ const Row = props => {
       }
       <TableRowColumn>
         <IconButton
+          iconStyle={{ color: '#757575' }}
           onTouchTap={() => props.removeItem()}
         >
           <ActionDelete />

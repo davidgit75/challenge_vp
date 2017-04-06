@@ -1,4 +1,5 @@
 import React from 'react';
+import Chip from 'material-ui/Chip';
 import './styles.css';
 
 const substractPhone = (phone, row) => {
@@ -17,13 +18,17 @@ const Result = props => {
       {
         props.focus
         ?
-          <string>
-            RESULT: {props.focus.data.name} {props.focus.data.lastName} {props.focus.data.phone},
-            cell clicked: ({props.focus.position[0]}, {props.focus.position[1]}),
-            subtract phone: {compair.comparison} ({compair.substract} > {compair.row})
-          </string>
+          <Chip style={{ backgroundColor: '#7CB342' }}>
+            <string>
+              RESULT: {props.focus.data.name} {props.focus.data.lastName} {props.focus.data.phone},
+              cell clicked: ({props.focus.position[0]}, {props.focus.position[1]}),
+              subtract phone: {compair.comparison} ({compair.substract} > {compair.row})
+            </string>
+          </Chip>
         :
-          <string>RESULT: Aún sin información</string>
+          <Chip style={{ backgroundColor: '#FF9800' }}>
+            <string>RESULT: Aún sin información</string>
+          </Chip>
       }
     </div>
   );

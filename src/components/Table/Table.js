@@ -20,7 +20,7 @@ const TableData = props => {
           </TableRow>
         </TableHeader>
 
-        <TableBody>
+        <TableBody stripedRows>
           {
             props.data.map((item, index) => (
               <Row
