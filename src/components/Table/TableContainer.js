@@ -12,9 +12,7 @@ class TableContainer extends React.Component {
         data={this.props.data}
         removeItem={index => {
           this.props.removeItem(index);
-          if ((this.props.focus !== null) && (index === this.props.focus.position[0])) {
-            this.props.updateFocusedItem(null);
-          }
+          this.props.updateFocusedItem(null);
         }}
         showResult={d => this.props.updateFocusedItem(d)}
       />

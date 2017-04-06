@@ -7,9 +7,7 @@ import Row from '../Row';
 const TableData = props => {
   return (
     <div className="table-container">
-      <Table
-        onCellHover={() => console.log('cell hover')}
-      >
+      <Table>
         <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
           <TableRow>
             <TableHeaderColumn>#</TableHeaderColumn>

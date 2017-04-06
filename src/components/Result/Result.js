@@ -27,7 +27,7 @@ const Result = props => {
           </Chip>
         :
           <Chip style={{ backgroundColor: '#FF9800' }}>
-            <string>RESULT: Aún sin información</string>
+            <string>RESULT: no ha seleccionado alguna fila</string>
           </Chip>
       }
     </div>

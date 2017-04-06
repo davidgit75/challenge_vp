@@ -21,7 +21,6 @@ const data = (state = [], action) => {
 }
 
 const focus = (state = null, action) => {
-  console.log('action focus', state, action);
   const { type, payload } = action;
   switch (type) {
     case actions.UPDATE_FOCUSED_ITEM:

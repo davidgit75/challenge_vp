@@ -6,6 +6,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import CircularProgress from 'material-ui/CircularProgress';
 import {Card, CardHeader} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentRedo from 'material-ui/svg-icons/content/redo';
 
 import * as Actions from '../actions';
 import '../styles/style.css';
@@ -26,6 +28,10 @@ const fakeFetchListData = () => {
 
 class Main extends Component {
   componentWillMount() {
+    this.getData();
+  }
+
+  getData() {
     fakeFetchListData()
     .then(data => {
       this.props.setLoading(false);
@@ -35,7 +41,6 @@ class Main extends Component {
   }
 
   render() {
-    console.log('props', this.props);
     return (
       <MuiThemeProvider>
         <div>
@@ -53,12 +58,24 @@ class Main extends Component {
                   <ResultContainer focus={this.props.focus}/>
                 </div>
               :
-                <Card style={styles.card}>
-                  <CardHeader
-                    title="Sin datos"
-                    subtitle="No se han encontrado datos"
-                  />
-                </Card>
+                <div>
+                  <Card style={styles.card}>
+                    <CardHeader
+                      title="Sin datos"
+                      subtitle="No se han encontrado datos"
+                    />
+                  </Card>
+
+                  <FloatingActionButton
+                    style={{ position: 'absolute', right: 24, bottom: 45 }}
+                    onTouchTap={() => {
+                      this.getData();
+                      this.props.setLoading(true);
+                    }}
+                  >
+                    <ContentRedo />
+                  </FloatingActionButton>
+                </div>
           }
         </div>
       </MuiThemeProvider>
