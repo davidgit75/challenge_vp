@@ -14,15 +14,15 @@ import '../styles/style.css';
 import styles from '../styles/style';
 import TableContainer from '../components/Table';
 import ResultContainer from '../components/Result';
+import data from '../data/data';
 
 injectTapEventPlugin();
 
-import data from '../data/data';
 const fakeFetchListData = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(data)
-    }, 2000);
+    }, 1000);
   });
 }
 
@@ -32,8 +32,10 @@ class Main extends Component {
   }
 
   getData() {
+    this.props.setLoading(true);
     fakeFetchListData()
     .then(data => {
+      console.log('data', data);
       this.props.setLoading(false);
       this.props.setData(data);
     })
@@ -62,15 +64,14 @@ class Main extends Component {
                   <Card style={styles.card}>
                     <CardHeader
                       title="Sin datos"
-                      subtitle="No se han encontrado datos"
+                      subtitle="Puede recargarlos con el botón ubicado en la parte inferior derecha"
                     />
                   </Card>
 
                   <FloatingActionButton
                     style={{ position: 'absolute', right: 24, bottom: 45 }}
                     onTouchTap={() => {
-                      this.getData();
-                      this.props.setLoading(true);
+                      location.reload();
                     }}
                   >
                     <ContentRedo />
