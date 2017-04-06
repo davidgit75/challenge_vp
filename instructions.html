@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Contacts</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <style>
+    li {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body class="container">
+  <h3>Contacts</h3>
+  <h2>You can take the following table as a template for develop your project</h2>
+  <table class="table table-bordered table-striped table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Jerry</td>
+        <td>Seinfeld</td>
+        <td>555-9143</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>George</td>
+        <td>Costanza</td>
+        <td>555-6210</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Elaine</td>
+        <td>Benes</td>
+        <td>555-4040</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>Cosmo</td>
+        <td>Kramer</td>
+        <td>555-1111</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr/>
+
+  <div><strong>Result:</strong> <span id="result"></span></div>
+
+  <hr/>
+
+  <h3>Instructions (minumun required)</h3>
+    <p>The following instructions should be develop in React.
+    <span style="font-weight: bold">We have already a bolierplate project set and ready for you to develop, check how to start it on <a href="#setup">installation setup</a></span>
+    Each of the task will measure the coding skills,
+    so it would very advisable to work with a clean, intuitive and rehusable code
+    in order to assign you the seniority level. There's a file called <code>src/data/data.js</code>
+    that represent the data you will show on the table </p>
+  <ol>
+    <li>Convert the existing html table above into react Component(s).</li>
+    <li>
+      Create an additional column within the table which adds a "delete" button to each row. Then, set up a event listener so that when a user clicks the button, it removes the row.</li>
+    <li>
+      Set up an event listener so that when a user clicks a particular row within the contact list, the "First Name", "Last Name", and "Phone" are output as a space delimited string to the existing <code>span#result</code>.</li>
+    <li>
+      Set up an event listener so that when a user clicks a particular cell within the table body, the cell position is output as a number to the existing <code>span#result</code>.<br><i>Note: Count the cells from left to right, top to bottom</i>.</li>
+    <li>
+      Set up an event listener so that when a user clicks a particular row within the contact list, the last four digits of the row's "Phone" are taken and subtracted from left to right (<i>Ex: 4211 = 0, 6311 = 1</i>). The result of the subtraction is then compared against the row number to determine if the result is greater than the row number.<br>
+      Write the boolean result of this comparison to <code>span#result</code></li>
+  </ol>
+
+  <h3>Instructions (for react heros optional)</h3>
+    <p>This is a plus, do it if you consider that you have the skills to do it, this will determine also your seniority</p>
+  <ol>
+    <li>Manage the data and the states of the app with Redux (don't use this.state in react), only props are allowed</li>
+    <li>
+      After you refresh the page the data should be available after 1 second, imitating a fetching on the server.
+      This action should be performed async (suggesttion - react-thunk), check the method <code>fakeFetchListData()</code>
+      on <code>src/actions/index.js</code>
+    </li>
+  </ol>
+
+  <h3 id="setup">Installation set up</h3>
+  <p>To install and run this project you have to install Node, if you don't have it please download the lastest version <a href="https://nodejs.org/en/download/" target="_blank" >here</a></p>
+  <ol>
+    <li>Open the bash/terminal of your preference and go to the project root</li>
+    <li>
+      Install the dependencies, write on bash/terminal <code>npm install</code>
+    </li>
+    <li>Run the project, write npm start on write on bash/terminal</li>
+    <li>Open your browser on localhost:3000 and you will see a message</li>
+    <li>To start developing the exercise go to <code> src/Container.js</code> and start coding</li>
+    <li>Have fun</li>
+  </ol>
+</body>
+</html>

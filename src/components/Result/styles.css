@@ -1,0 +1,6 @@
+.container-result {
+  margin-top: 30px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
