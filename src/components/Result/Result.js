@@ -3,10 +3,17 @@ import Chip from 'material-ui/Chip';
 import './styles.css';
 
 const substractPhone = (phone, row) => {
-  const str = Math.abs(phone).toString();
-  let number = parseInt(str[0], 10);
+  const str = phone.toString();
+
+  // Check if first number is negative
+  let number;
+  if (str[0] === '-') number = parseInt(str[0]+str[1], 10);
+  else number = parseInt(str[0], 10);
+
   str.split("").map((item, index) => {
-    if (index > 0 ) number -= parseInt(item, 10);
+    let start = 0;
+    if (str[0] === '-') start = 1;
+    if (index > start ) number -= parseInt(item, 10);
   });
   return {substract: number, row, comparison: (number > row).toString()};
 };
